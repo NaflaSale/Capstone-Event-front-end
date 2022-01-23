@@ -1,0 +1,66 @@
+import React, { Component } from "react";
+import axios from "axios"
+import Ticket from "./img/Ticket.png";
+
+
+export default class MyTicket extends Component {
+
+ constructor(props) {
+        super(props);
+        this.state = {
+            TicketList: [],
+
+    };
+    }
+
+    componentDidMount() {
+        let x=localStorage.getItem("LogIn");
+        if(x=="welcome you Authentication User"){
+
+        axios.get("http://back-events-n.herokuapp.com/api/ticket").then(response => {
+            const TicketList = response.data
+            this.setState({ TicketList });
+        });
+    }}
+
+    deleteUseGarden(ticketId) {
+        console.log("Delete after Entering")
+        axios.delete(`http://back-events-n.herokuapp.com/api/ticket/delete/${ticketId}`)
+            .then(res => {
+                const TicketList = this.state.TicketList.filter(item => item.ticketId !== ticketId);
+                this.setState({ TicketList });
+            })
+    }
+
+render() {
+    return (
+
+
+        <div className="ticket" >
+            <div >
+               <p></p>
+                    {this.state.TicketList.map((item => (
+                        <tr key={item.ticketId}>
+                      <div >
+                      </div>
+                        <div className="event">
+                        <img  src={Ticket}  alt="A" width={240}/>
+                        <p>Name:{item.name} </p>
+                        <p>Price: {item.events.price}</p>
+                        <p>Event Name:{item.events.eventName} </p>
+                        <p>User Name:{item.users.username} </p>
+                        <button button class="nnn" onClick={(e) => this.deleteUseGarden(item.ticketId, e)}>delete</button>
+                        </div>
+                      
+                        <br></br><br></br>
+                        </tr>
+                       
+                    )))
+                    }
+        
+        </div>
+        </div>
+       
+  )
+}
+}
