@@ -50,9 +50,9 @@ function handleSubmit(event) {
 
           }
 
-          // else {
-          //     alert(res.data)
-          // }
+          else {
+              alert(res.data)
+          }
       }))
 }
 // user log in
