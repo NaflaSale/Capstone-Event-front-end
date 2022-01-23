@@ -42,7 +42,7 @@ function EnterTicket() {
        console.log(MyTicket)
         axios({
         method:'post',
-        url:'http://back-events-n.herokuapp.com/api/ticket/add',
+        url:'api/ticket/add',
           data: MyTicket,
         
         });

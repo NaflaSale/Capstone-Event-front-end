@@ -17,7 +17,7 @@ export default class MyTicket extends Component {
         let x=localStorage.getItem("LogIn");
         if(x=="welcome you Authentication User"){
 
-        axios.get("http://back-events-n.herokuapp.com/api/ticket").then(response => {
+        axios.get("api/ticket").then(response => {
             const TicketList = response.data
             this.setState({ TicketList });
         });
@@ -25,7 +25,7 @@ export default class MyTicket extends Component {
 
     deleteUseGarden(ticketId) {
         console.log("Delete after Entering")
-        axios.delete(`http://back-events-n.herokuapp.com/api/ticket/delete/${ticketId}`)
+        axios.delete(`api/ticket/delete/${ticketId}`)
             .then(res => {
                 const TicketList = this.state.TicketList.filter(item => item.ticketId !== ticketId);
                 this.setState({ TicketList });

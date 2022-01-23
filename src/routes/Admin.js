@@ -60,7 +60,7 @@ console.log(MyEvent)
 
 axios({
 method:'post',
-url:'http://back-events-n.herokuapp.com/api/event/add',
+url:'api/event/add',
   data: MyEvent,
 
 });
@@ -79,7 +79,7 @@ url:'http://back-events-n.herokuapp.com/api/event/add',
 
   axios({
   method:'post',
-  url:'http://back-events-n.herokuapp.com/api/admin/add',
+  url:'api/admin/add',
     data: MyAdmin,
   
   });}
@@ -90,7 +90,7 @@ url:'http://back-events-n.herokuapp.com/api/event/add',
   function handleClickDel2(){
     axios({
       method:'delete',
-      url:`http://back-events-n.herokuapp.com/api/event/delete/${del}`,
+      url:`/api/event/delete/${del}`,
 
       
     });
@@ -99,7 +99,7 @@ url:'http://back-events-n.herokuapp.com/api/event/add',
   }
  //fun Display admin name
 useEffect(()=>{
-axios.get("http://back-events-n.herokuapp.com/api/admin")
+axios.get("/api/admin")
 .then(result=>setData(result.data));
 console.log(data);
 //}

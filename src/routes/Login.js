@@ -29,7 +29,7 @@ function handleClickAdd2(){
   if(username!=null && password2!=null){
   axios({
   method:'post',
-  url:'http://back-events-n.herokuapp.com/api/users/add',
+  url:'api/users/add',
     data: MyUser,
   
   });}
@@ -40,7 +40,7 @@ function handleSubmit(event) {
   event.preventDefault();
   axios({
       method: "get",
-      url: "http://back-events-n.herokuapp.com/api/admin/login",
+      url: "api/admin/login",
       params: { adminname: adminname, password: password }
   })
       .then((res => {
@@ -60,7 +60,7 @@ function handleSubmitUser(event) {
   event.preventDefault();
   axios({
       method: "get",
-      url: "http://back-events-n.herokuapp.com/api/users/login",
+      url: "api/users/login",
       params: { username: username, password: password2 }
   })
       .then((res => {

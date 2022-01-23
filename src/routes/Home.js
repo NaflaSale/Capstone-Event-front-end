@@ -13,7 +13,7 @@ export default class AllEvent extends Component {
     }
     
     componentDidMount() {
-        axios.get("http://back-events-n.herokuapp.com/api/event").then(response => {
+        axios.get("api/event").then(response => {
             const EventList = response.data
             this.setState({ EventList });
         });
