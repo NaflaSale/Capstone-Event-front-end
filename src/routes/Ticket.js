@@ -17,7 +17,7 @@ export default class MyTicket extends Component {
         let x=localStorage.getItem("LogIn");
         if(x=="welcome you Authentication User"){
 
-        axios.get("api/ticket").then(response => {
+        axios.get("https://back-events-n.herokuapp.com/api/ticket").then(response => {
             const TicketList = response.data
             this.setState({ TicketList });
         });
