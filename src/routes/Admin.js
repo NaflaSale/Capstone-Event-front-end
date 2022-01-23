@@ -90,7 +90,7 @@ url:'api/event/add',
   function handleClickDel2(){
     axios({
       method:'delete',
-      url:`/api/event/delete/${del}`,
+      url:`api/event/delete/${del}`,
 
       
     });
@@ -99,7 +99,7 @@ url:'api/event/add',
   }
  //fun Display admin name
 useEffect(()=>{
-axios.get("/api/admin")
+axios.get("api/admin")
 .then(result=>setData(result.data));
 console.log(data);
 //}
