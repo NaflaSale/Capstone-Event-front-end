@@ -44,7 +44,7 @@ function handleSubmit(event) {
       params: { adminname: adminname, password: password }
   })
       .then((res => {
-          console.log(res.data)
+          // console.log(res.data)
           if (res.data == "welcome you Authentication Admin") {
              localStorage.setItem("LogIn","welcome you Authentication Admin") 
 
