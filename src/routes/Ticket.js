@@ -25,7 +25,7 @@ export default class MyTicket extends Component {
 
     deleteUseGarden(ticketId) {
         console.log("Delete after Entering")
-        axios.delete(`api/ticket/delete/${ticketId}`)
+        axios.delete(`https://back-events-n.herokuapp.com/api/ticket/delete/${ticketId}`)
             .then(res => {
                 const TicketList = this.state.TicketList.filter(item => item.ticketId !== ticketId);
                 this.setState({ TicketList });
