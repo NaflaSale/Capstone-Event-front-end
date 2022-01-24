@@ -21,7 +21,7 @@ export default function App() {
        <a href="https://mobile.twitter.com/Graduated__2017" ><img src={T} alt="A" className="bacground" width={50}/></a>
        <a href="https://www.facebook.com/campaign/landing.php"> <img src={F} alt="A" className="bacground" width={50}/></a>
        <a href="https://www.instagram.com/" ><img src={In} alt="A" className="bacground"width={50}/></a>
-       <a href="https://youtube.com/channel/UCI8LHsDLtmGZLmZggQR7Rpg"><img src={Y} alt="A" className="bacground" width={50}/></a> 
+       <a href="https://youtube.com"><img src={Y} alt="A" className="bacground" width={50}/></a> 
       <a href="https://github.com/NaflaSale" > <img src={G} alt="A" className="bacground" width={50}/></a>
 
       <marquee> Events Management System .. Nafla Al-anazi ..2022</marquee>
